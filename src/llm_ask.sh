@@ -69,6 +69,8 @@ mistral() { # Alias installed
         -H \"Content-Type: application/json\" \\
         -d \"\$json\" | jq -r \".choices[0].message.content\"
 }"
+    # Si no existe el .bash_aliases, lo creamos si existe, solo modificará la fecha y hora de actualziacion
+    touch ~/.bash_aliases
     # Checkear si está instalado el alias. SI no lo está lo instalamos.
     grep -q "mistral() { # Alias installed" ~/.bash_aliases && echo "El alias ya está instalado" || echo -e "$alias" >> ~/.bash_aliases
 
