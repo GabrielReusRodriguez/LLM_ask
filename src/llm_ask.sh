@@ -65,7 +65,7 @@ mistral() { # Alias installed
     }')
 
     curl -s \"${LLM_URL}\" \\
-        -H \"Authorization: Bearer ${MISTRAL_API_KEY}\" \\
+        -H \"Authorization: Bearer \${MISTRAL_API_KEY}\" \\
         -H \"Content-Type: application/json\" \\
         -d \"\$json\" | jq -r \".choices[0].message.content\"
 }"
